@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="{% static 'simplesocial/css/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>  
+</head>
+<body>
+
+
+    {% if user.is_authenticated %}
+
+    <div class="navbar">
+
+        <div class="groups flexy">
+            <div class="group-icon right-mar">
+                <i class="fa-solid fa-user-group"></i>
+                
+            </div class="option_color">
+            <a href="{% url 'posts:create' %}">Post</a>
+        </div>
+
+        <div class="post flexy">
+            <div class="post-icon right-mar">
+                <i class="fa-solid fa-pen-to-square"></i>
+                
+            </div class="option_color">
+            <a href="{% url 'groups:all' %}">Groups</a>
+        </div>
+
+        <div class="create-group flexy">
+            <div class="create-group-icon right-mar">
+                <i class="fa-regular fa-square-plus"></i>
+                
+            </div class="option_color">
+            <a href="{% url 'groups:create' %}">Create Groups</a>
+        </div>
+
+        <div class="log-out flexy">
+            <div class="log-out-icon right-mar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                
+            </div class="option_color">
+            <a href="{% url 'accounts:logout' %}">Log out</a>
+        </div>
+
+        
+       
+       
+    </div>
+
+
+<div class="hero-section">
+
+    <div class="logo"></div>
+</div>
+
+   
+
+
+    {% else %}
+
+    <div class="navbar">
+
+    
+
+
+        <div class="groups flexy">
+            <div class="group-icon right-mar">
+                <i class="fa-solid fa-user-group"></i>
+                
+            </div class="no_line option_color">
+            <a href="{% url 'groups:all' %}">Groups</a>
+        </div>
+
+        <div class="about-us flexy">
+            <div class="about-icon right-mar">
+                <i class="fa-solid fa-info"></i>
+                
+            </div class="option_color">
+            <a href="{% url 'aboutUs' %}">About Us</a>
+        </div>
+
+        <div class="login flexy">
+            <div class="login-icon right-mar">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                
+            </div class="no_line option_color">
+            <a href="{% url 'accounts:login' %}" style="text-decoration:none" >Login</a>
+        </div>
+
+        <div class="sign-up flexy">
+            <div class="sign-up-icon right-mar">
+                <i class="fa-solid fa-user-plus"></i>
+
+                
+            </div class="no_line option_color">
+            <a href="{% url 'accounts:signup' %}">Sign Up</a>
+        </div>
+
+        
+       
+       
+    </div>
+
+    <div class="hero-section">
+
+        <div class="logo">
+            
+        </div>
+
+        
+        
+    </div>
+
+   
+
+    {% endif %}
+
+    <div class="container">
+        <p class="text"> Unite For Change! Collaborate For Impact..... </p>
+        
+    </div>
+
+
+
+    
+    
+
+   
+    
+</body>
+</html>

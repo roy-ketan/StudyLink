@@ -1,0 +1,127 @@
+body{
+    background-color: rgb(145, 191, 195);
+}
+
+
+.navbar{
+    height: 60px;
+    background-color: #0f1111;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    justify-content: space-evenly;
+    
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    
+}
+
+.option_color{
+    color: rgb(48, 124, 124);
+}
+
+.flexy{
+    padding: 10px;
+    display: flex;
+}
+
+.right-mar{
+    margin-right: 5px;
+
+}
+
+.flexy:hover{
+    border: 2px solid white;
+}
+
+.hero-section{
+    background-image: url("front_page_helping_hands.jpg");
+    height: 450px;
+    
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.logo{
+    background-image: url("logo_image.jpg");
+    position: absolute;
+    height: 48px;
+    width: 50px;
+    background-size: cover;
+    bottom: 600px;
+    left:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 2px solid rgb(38, 38, 133);
+
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+/* 2nd part*/
+
+.hero2-section{
+    background-image: url("front_page_helping_hands.jpg");
+    height: 450px;
+    
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.container{
+    display: inline-block;
+    
+   
+}
+
+.text{
+    font-size: 3em;
+    letter-spacing: 10px;
+    font-family: monospace;
+    border-right: 5px solid ;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    animation: typing 5s steps(45) , 
+               cursor .4s step-end infinite alternate; 
+
+}
+
+/* cursor blinking*/
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/*typing effect*/
+@keyframes typing {
+    from{width: 0;}
+}

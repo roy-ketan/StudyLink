@@ -1,0 +1,82 @@
+body{
+    background-color: rgb(58, 169, 169);
+   
+}
+
+#body_base{
+    background-color: rgb(187, 220, 222);
+}
+
+.group_heading{
+    font-family:  monospace,'Courier New', Courier;
+}
+
+.navbar{
+    height: 60px;
+    background-color: #0f1111;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    justify-content: space-evenly;
+    
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    
+}
+
+.flexy{
+    padding: 10px;
+    display: flex;
+}
+
+.right-mar{
+    margin-right: 5px;
+
+}
+
+.flexy:hover{
+    border: 2px solid white;
+}
+
+.hero-section{
+    background-image: url("front_page_helping_hands.jpg");
+    height: 450px;
+    
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.container_curr{
+    
+    display: flex;
+    justify-content: space-evenly;
+    font-family: monospace;
+    font-size: 45px;
+
+}
+
+
+/* cursor blinking*/
+
+p{
+    margin-left: 10px;
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.head_center{
+    display: flex;
+    justify-content: space-evenly;
+}

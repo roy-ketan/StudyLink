@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Star Social</title>
+   
+    <link rel="stylesheet" href="{% static 'account_css/css/style.css'%}">
+
+    <!-- Latest compiled and minified CSS -->
+
+   
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Alternative to Bootstrap 3 Glyphicons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    {% comment %} <link rel="stylesheet" href="{% static 'simplesocial/css/master.css'%}"> {% endcomment %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>  
+
+  </head>
+  <body id="body_base">
+    
+          {% if user.is_authenticated %}
+          <div class="navbar">
+
+            <div class="groups flexy">
+                <div class="group-icon right-mar">
+                    <i class="fa-solid fa-user-group"></i>
+                    
+                </div class="option_color">
+                <a href="{% url 'posts:create' %}">Post</a>
+            </div>
+    
+            <div class="post flexy">
+                <div class="post-icon right-mar">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    
+                </div class="option_color">
+                <a href="{% url 'groups:all' %}">Groups</a>
+            </div>
+    
+            <div class="create-group flexy">
+                <div class="create-group-icon right-mar">
+                    <i class="fa-regular fa-square-plus"></i>
+                    
+                </div class="option_color">
+                <a href="{% url 'groups:create' %}">Create Groups</a>
+            </div>
+    
+            <div class="log-out flexy">
+                <div class="log-out-icon right-mar">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+    
+                    
+                </div class="option_color">
+                <a href="{% url 'accounts:logout' %}">Log out</a>
+            </div>
+    
+            
+           
+           
+        </div>
+    
+    </div>
+    
+    {% comment %} <div class="hero2-section">
+        
+    </div> {% endcomment %}
+    
+          {% else %}
+          <div class="navbar">
+
+    
+
+
+            <div class="groups flexy">
+                <div class="group-icon right-mar">
+                    <i class="fa-solid fa-user-group"></i>
+                    
+                </div class="no_line option_color">
+                <a href="{% url 'groups:all' %}">Groups</a>
+            </div>
+    
+            <div class="about-us flexy">
+                <div class="about-icon right-mar">
+                    <i class="fa-solid fa-info"></i>
+                    
+                </div class="option_color">
+                <a href="{% url 'aboutUs' %}">About Us</a>
+            </div>
+    
+            <div class="login flexy">
+                <div class="login-icon right-mar">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    
+                </div class="no_line option_color">
+                <a href="{% url 'accounts:login' %}" style="text-decoration:none" >Login</a>
+            </div>
+    
+            <div class="sign-up flexy">
+                <div class="sign-up-icon right-mar">
+                    <i class="fa-solid fa-user-plus"></i>
+    
+                    
+                </div class="no_line option_color">
+                <a href="{% url 'accounts:signup' %}">Sign Up</a>
+            </div>
+    
+            
+           
+           
+        </div>
+    
+        {% comment %} <div class="hero-section">
+    
+            <div class="logo">
+                
+            </div> {% endcomment %}
+    
+            
+            
+        {% comment %} </div> {% endcomment %}
+    
+       
+    
+        {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <div class="container_curr">
+        About Us
+    </div>
+
+    
+  
+   
+    <p>
+      At ImpactConnect, we believe in the power of collaboration to create positive change. Our platform brings together individuals and organizations to work on social impact projects. We are dedicated to empowering changemakers and making a collective impact for a better future.
+    </p>
+    <br>
+    <br>
+
+    <div class="container_curr">
+        Our Vision
+    </div>
+    <p>
+      At ImpactConnect, we believe in bringing people together to solve important social problems. Our chatroom provides a space for passionate individuals to connect, share their knowledge, and work together for a common cause. We aim to create meaningful connections, foster the sharing of ideas, and enable collaborative efforts that lead to real and lasting social change.
+    </p>
+
+
+    
+    
+    
+    <br>
+    <br>
+
+    <div class="container_curr">
+        Our Mission
+    </div>
+    <p>
+      Our mission is to empower individuals and organizations to create positive social change through collaboration. We aim to break down barriers, foster inclusivity, and facilitate the exchange of knowledge and resources. By providing a platform that connects changemakers from diverse backgrounds, disciplines, and geographical locations, we strive to unlock collective potential and create a ripple effect of impact that reaches far and wide. Join us at ImpactConnect and be a part of a thriving community dedicated to driving social change through collaboration.
+    </p>
+
+
+
+    
+    
+
+
+</body>
+</html>
