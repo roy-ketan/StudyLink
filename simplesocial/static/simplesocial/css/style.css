@@ -38,7 +38,7 @@ body{
 
 .hero-section{
     background-image: url("front_page_helping_hands.jpg");
-    height: 450px;
+    height: 200x;
     
     margin-left: 20px;
     margin-right: 20px;
@@ -52,6 +52,11 @@ body{
     align-items: flex-end;
     
 }
+
+
+
+
+
 
 .logo{
     background-image: url("logo_image.jpg");
