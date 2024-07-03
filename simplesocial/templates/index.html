@@ -3,39 +3,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chatroom</title>
-    <link rel="stylesheet" href="{% static 'simplesocial/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>  
+    <link rel="stylesheet" href="{% static 'simplesocial/index.css' %}">
 </head>
 <body>
-
+    
     {% if user.is_authenticated %}
+    
     <div class="navbar">
-        <div class="groups flexy">
-            <div class="group-icon right-mar">
-                <i class="fa-solid fa-user-group"></i>
-            </div class="option_color">
+        <div class="nav-cart border">
+            <div class="cart-icon">
+                <i class="fa-solid fa-pencil-alt"></i>
+            </div>
             <a href="{% url 'posts:create' %}">Post</a>
         </div>
-
-        <div class="post flexy">
-            <div class="post-icon right-mar">
-                <i class="fa-solid fa-pen-to-square"></i>
-            </div class="option_color">
+    
+        <div class="nav-cart border">
+            <div class="cart-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
             <a href="{% url 'groups:all' %}">Groups</a>
         </div>
-
-        <div class="create-group flexy">
-            <div class="create-group-icon right-mar">
+    
+        <div class="nav-cart border">
+            <div class="cart-icon">
                 <i class="fa-regular fa-square-plus"></i>
-            </div class="option_color">
+            </div>
             <a href="{% url 'groups:create' %}">Create Groups</a>
         </div>
-
-        <div class="log-out flexy">
-            <div class="log-out-icon right-mar">
-                <i class="fa-solid fa-right-from-bracket"></i>
-            </div class="option_color">
+    
+        <div class="nav-cart border">
+            <div class="cart-icon">
+                <i class="fa-solid fa-sign-out-alt"></i>
+            </div>
             <!-- Logout Form -->
             <form id="logout-form" action="{% url 'accounts:logout' %}" method="post" style="display: none;">
                 {% csrf_token %}
@@ -44,114 +46,175 @@
             <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
         </div>
     </div>
-
-    <div class="hero-section">
-        <div class="logo"></div>
-    </div>
-
+    
     {% else %}
-    {% comment %} <div class="navbar">
-        <div class="groups flexy">
-            <div class="group-icon right-mar">
-                <i class="fa-solid fa-user-group"></i>
-            </div class="no_line option_color">
+
+    <div class="navbar"> 
+
+        <div class="nav-cart border">
+            <div class="cart-icon">
+            <i class="fa-solid fa-user-group"></i>
+            </div>
             <a href="{% url 'groups:all' %}">Groups</a>
         </div>
 
-        <div class="about-us flexy">
-            <div class="about-icon right-mar">
+        <div class="nav-cart border">
+            <div class="cart-icon">
                 <i class="fa-solid fa-info"></i>
-            </div class="option_color">
+            </div>
             <a href="{% url 'aboutUs' %}">About Us</a>
         </div>
 
-        <div class="login flexy">
-            <div class="login-icon right-mar">
+        <div class="nav-cart border">
+            <div class="cart-icon">
                 <i class="fa-solid fa-right-to-bracket"></i>
-            </div class="no_line option_color">
+            </div>
             <a href="{% url 'accounts:login' %}" style="text-decoration:none">Login</a>
         </div>
 
-        <div class="sign-up flexy">
-            <div class="sign-up-icon right-mar">
-                <i class="fa-solid fa-user-plus"></i>
-            </div class="no_line option_color">
+        <div class="nav-cart border">
+            <div class="cart-icon">
+            <i class="fa-solid fa-user-plus"></i>
+            </div>
             <a href="{% url 'accounts:signup' %}">Sign Up</a>
         </div>
-    </div> {% endcomment %}
+    
+</div>
 
-    <div class="navbar"> 
-        <!-- <div class="nav-logo border">
-            <div class="logo"></div>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="panel">
+        <!-- <div class="panel-all">
+            <i class="fa-solid fa-bars"></i>
+            All
+        </div>
+        <div class="panel-ops">
+            <p>Today's Deals</p>
+           <p>Customer Service</p>
+           <p>Registry</p>
+           <p>Gift Cards</p>
+           <p>Sell</p>
+        </div>
+        <div class="panel-deals-deals">
+            Shop Deals in Electronics
+
         </div> -->
-        <!--
-            <div class="nav-address border">
-                <p class="add-first">Deliver to </p>
-                <div class="add-icon">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <p class="add-second">India</p>
-                </div>
-            </div>
+        <div id="scroll-text">Welcome to EduGroup, where students connect, ask, and learn with ease.</div>
 
-            <div class="nav-search">
-                <select class="search-select">
-                    <option value="">All</option>
-                </select>
-                <input class="search-input" placeholder="Search Amazon">
-                <div class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
+    </div>
 
-            <div class="nav-signin border">
-                <p><span class="account">Hello, sign in</span></p>
-                <p class="orders">Account & lists</p>
-            </div>
-            <div class="nav-signin border">
-                <p><span class="account">Returns</span></p>
-                <p class="orders">& Orders</p>
-            </div>-->
+    <div class="hero-section" style="background-image: url('{% static 'new_hero_image.jpg' %}')">
+    </div>
 
-            <div class="nav-cart border">
-                <div class="cart-icon">
-                <i class="fa-solid fa-user-group"></i>
-                </div>
-                <a href="{% url 'groups:all' %}">Groups</a>
+    <div class="shop-section">
+        <div class="box1 box">
+            <div class="box-content">
+                <h2>Authenticated Students</h2>
+                <div class="box-image" style="background-image: url('{% static 'login.jpeg' %}')"></div>
+                <p style="color:  #007185">See more</p>
             </div>
+        </div>
+        <div class="box2 box">
+            <div class="box-content">
+                <h2>Easy Collaboration</h2>
+                <div class="box-image" style="background-image: url('{% static 'group.jpg' %}')"></div>
+                <p style="color:  #007185">See more</p>
+            </div>
+        </div>
+        <div class="box3 box">
+            <div class="box-content">
+                <h2>User-Friendly UI/UX</h2>
+                <div class="box-image" style="background-image: url('{% static 'user_friendly.jpeg' %}')"></div>
+                <p style="color:  #007185">See more</p>
+            </div>
+        </div>
+       
+    </div>
 
-            <div class="nav-cart border">
-                <div class="cart-icon">
-                    <i class="fa-solid fa-info"></i>
-                </div>
-                <a href="{% url 'aboutUs' %}">About Us</a>
+    <div class="shop-section">
+        <div class="box4 box">
+            <div class="box-content">
+                <h2>No Writting Accessories Required</h2>
+                <div class="box-image" style="background-image: url('{% static 'video_solutions.png' %}')"></div>
+                <p style="color:  #007185">See more</p>
             </div>
-
-            <div class="nav-cart border">
-                <div class="cart-icon">
-                    <i class="fa-solid fa-right-to-bracket"></i>
-                </div>
-                <a href="{% url 'accounts:login' %}" style="text-decoration:none">Login</a>
+        </div>
+        <div class="box1 box">
+            <div class="box-content">
+                <h2>Question Posting and Discussion</h2>
+                <div class="box-image" style="background-image: url('{% static 'post.jpeg' %}')"></div>
+                <p style="color:  #007185">See more</p>
             </div>
-
-            <div class="nav-cart border">
-                <div class="cart-icon">
-                <i class="fa-solid fa-user-plus"></i>
-                </div>
-                <a href="{% url 'accounts:signup' %}">Sign Up</a>
+        </div>
+        <div class="box2 box">
+            <div class="box-content">
+                <h2>Scalability and Future Development</h2>
+                <div class="box-image" style="background-image: url('{% static 'Scalability.png' %}')"></div>
+                <p style="color:  #007185">See more</p>
             </div>
+        </div>
         
-    </div> 
-
-
-    <div class="hero-section">
-        <div class="logo"></div>
     </div>
 
-
-    {% endif %}
-
-    <div class="container">
-        <p class="text">Unite For Change! Collaborate For Impact.....</p>
+    <div class="foot-panel1">
+        Back To Top
     </div>
+    <div class="foot-panel2">
+
+        <ul>
+            <p>Get to Know Usk</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+        </ul>
+
+        <ul>
+            <p>Get to Know Usk</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+        </ul>
+
+        <ul>
+            <p>Get to Know Usk</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+        </ul>
+
+        <ul>
+            <p>Get to Know Usk</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+        </ul>
+    </div>
+    
 </body>
 </html>

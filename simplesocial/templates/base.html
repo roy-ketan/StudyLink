@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 {% load static %}
 <html>
   <head>
     <meta charset="utf-8">
     <title>Star Social</title>
 
-    <link rel="stylesheet" href="{% static 'account_css/css/style.css'%}">
+    
 
     <!-- Latest compiled and minified CSS -->
     
@@ -13,16 +13,18 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> {% endcomment %}
 
     <!-- Alternative to Bootstrap 3 Glyphicons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {% comment %} <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> {% endcomment %}
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    {% comment %} <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> {% endcomment %}
 
     {% comment %} <link rel="stylesheet" href="{% static 'simplesocial/css/master.css'%}"> {% endcomment %}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>  
+
+    <link rel="stylesheet" href="{% static 'account_css/css/style.css' %}">
 
   </head>
   <body id="body_base">
@@ -143,9 +145,7 @@
 
     <canvas id="canvas"></canvas>
 
-    {% comment %} <script src="{% static "simplesocial/js/master.js"%}" type="text/javascript" ></script> {% endcomment %}
 
-    <!-- Latest compiled and minified jQuery -->
    
   </body>
 </html>

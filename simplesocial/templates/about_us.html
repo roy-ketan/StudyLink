@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Star Social</title>
    
-    <link rel="stylesheet" href="{% static 'account_css/css/style.css'%}">
+    
 
     <!-- Latest compiled and minified CSS -->
 
@@ -15,16 +15,17 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> {% endcomment %}
 
     <!-- Alternative to Bootstrap 3 Glyphicons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {% comment %} <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> {% endcomment %}
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    {% comment %} <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> {% endcomment %}
 
     {% comment %} <link rel="stylesheet" href="{% static 'simplesocial/css/master.css'%}"> {% endcomment %}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>  
+    <link rel="stylesheet" href="{% static 'account_css/css/style.css'%}">
 
   </head>
   <body id="body_base">
@@ -32,32 +33,32 @@
           {% if user.is_authenticated %}
           <div class="navbar">
 
-            <div class="groups flexy">
-                <div class="group-icon right-mar">
+            <div class="nav-cart border">
+                <div class="cart-icon">
                     <i class="fa-solid fa-user-group"></i>
                     
-                </div class="option_color">
+                </div>
                 <a href="{% url 'posts:create' %}">Post</a>
             </div>
     
-            <div class="post flexy">
-                <div class="post-icon right-mar">
+            <div class="nav-cart border">
+                <div class="cart-icon">
                     <i class="fa-solid fa-pen-to-square"></i>
                     
-                </div class="option_color">
+                </div>
                 <a href="{% url 'groups:all' %}">Groups</a>
             </div>
     
-            <div class="create-group flexy">
-                <div class="create-group-icon right-mar">
+            <div class="nav-cart border">
+                <div class="cart-icon">
                     <i class="fa-regular fa-square-plus"></i>
                     
                 </div class="option_color">
                 <a href="{% url 'groups:create' %}">Create Groups</a>
             </div>
     
-            <div class="log-out flexy">
-                <div class="log-out-icon right-mar">
+            <div class="nav-cart border">
+                <div class="cart-icon">
                     <i class="fa-solid fa-right-from-bracket"></i>
     
                     
@@ -82,36 +83,36 @@
     
 
 
-            <div class="groups flexy">
-                <div class="group-icon right-mar">
+            <div class="nav-cart border">
+                <div class="cart-icon">
                     <i class="fa-solid fa-user-group"></i>
                     
-                </div class="no_line option_color">
+                </div>
                 <a href="{% url 'groups:all' %}">Groups</a>
             </div>
     
-            <div class="about-us flexy">
-                <div class="about-icon right-mar">
+            <div class="nav-cart border">
+                <div class="cart-icon">
                     <i class="fa-solid fa-info"></i>
                     
-                </div class="option_color">
+                </div>
                 <a href="{% url 'aboutUs' %}">About Us</a>
             </div>
     
-            <div class="login flexy">
-                <div class="login-icon right-mar">
+            <div class="nav-cart border">
+                <div class="cart-icon">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     
-                </div class="no_line option_color">
+                </div>
                 <a href="{% url 'accounts:login' %}" style="text-decoration:none" >Login</a>
             </div>
     
-            <div class="sign-up flexy">
-                <div class="sign-up-icon right-mar">
+            <div class="nav-cart border">
+                <div+ class="cart-icon">
                     <i class="fa-solid fa-user-plus"></i>
     
                     
-                </div class="no_line option_color">
+                </div+>
                 <a href="{% url 'accounts:signup' %}">Sign Up</a>
             </div>
     
@@ -137,40 +138,71 @@
       </div>
     </nav>
 
-    <div class="container_curr">
-        About Us
+    <div class="content">
+        <div class="container_curr">
+            About Us
+        </div>
+        <p>
+            At EduGroup, we believe that learning should be collaborative, engaging, and accessible to everyone. Our web app is designed to foster a dynamic educational community where students can come together, form groups, and support each other in their academic journeys. We aim to create an environment that not only enhances understanding but also encourages curiosity and a love for learning.
+        </p>
+        <br><br>
+
+        <div class="container_curr">
+            Our Mission
+        </div>
+        <p>
+            Our mission is to revolutionize the way students learn and interact with educational content. We strive to:
+            <ul>
+                <li>Empower Students: By providing a platform where students can ask questions, share knowledge, and collaborate on solutions, we empower them to take control of their learning process.</li>
+                <li>Enhance Learning: Through video solutions and interactive discussions, we make learning more engaging and effective.</li>
+                <li>Build Community: We aim to build a supportive community where students from diverse backgrounds can connect, collaborate, and grow together.</li>
+            </ul>
+        </p>
+        <br><br>
+
+        <div class="container_curr">
+            What We Offer
+        </div>
+        <p>
+            Group Formation: Join or create study groups to collaborate with peers who share your interests and academic goals. Group study not only enhances understanding but also makes learning more enjoyable and less isolating.
+            <br><br>
+            Q&A Platform: Have a question about a subject? Post it on our platform and get detailed answers from fellow students and subject matter experts. No question is too small, and every question is an opportunity for learning.
+            <br><br>
+            Video Solutions: Visual learning is powerful. That's why we offer video solutions to complex problems and topics. Our videos are created by experienced educators and are designed to break down complicated concepts into easy-to-understand segments.
+            <br><br>
+            Interactive Discussions: Engage in discussions with peers and experts. Share your ideas, debate different viewpoints, and expand your understanding through meaningful interactions.
+        </p>
+        <br><br>
+
+        <div class="container_curr">
+            Our Values
+        </div>
+        <p>
+            Inclusivity: We are committed to creating an inclusive platform where everyone feels welcome and valued.
+            <br><br>
+            Innovation: We continuously innovate to provide the best tools and resources for our users.
+            <br><br>
+            Integrity: We maintain the highest standards of integrity in everything we do. Honesty and transparency are at the core of our operations.
+            <br><br>
+            Collaboration: We believe in the power of collaboration. Together, we can achieve more and make learning a richer experience.
+        </p>
+        <br><br>
+
+        <div class="container_curr">
+            Join Us!
+        </div>
+        <p>
+            Whether you are a high school student preparing for exams, a college student tackling tough courses, or a lifelong learner pursuing new knowledge, EduGroup is here for you. Join us today and be a part of a vibrant educational community. Let's learn, grow, and succeed together!
+        </p>
+        <br><br>
+
+        <div class="container_curr">
+            Contact Us
+        </div>
+        <p>
+            Have questions or feedback? We'd love to hear from you! Reach out to us at <a href="mailto:ketanroy0866@gmail.com">ketanroy0866.com</a> or follow us on our social media channels.
+        </p>
     </div>
-
-    
-  
-   
-    <p>
-      At ImpactConnect, we believe in the power of collaboration to create positive change. Our platform brings together individuals and organizations to work on social impact projects. We are dedicated to empowering changemakers and making a collective impact for a better future.
-    </p>
-    <br>
-    <br>
-
-    <div class="container_curr">
-        Our Vision
-    </div>
-    <p>
-      At ImpactConnect, we believe in bringing people together to solve important social problems. Our chatroom provides a space for passionate individuals to connect, share their knowledge, and work together for a common cause. We aim to create meaningful connections, foster the sharing of ideas, and enable collaborative efforts that lead to real and lasting social change.
-    </p>
-
-
-    
-    
-    
-    <br>
-    <br>
-
-    <div class="container_curr">
-        Our Mission
-    </div>
-    <p>
-      Our mission is to empower individuals and organizations to create positive social change through collaboration. We aim to break down barriers, foster inclusivity, and facilitate the exchange of knowledge and resources. By providing a platform that connects changemakers from diverse backgrounds, disciplines, and geographical locations, we strive to unlock collective potential and create a ripple effect of impact that reaches far and wide. Join us at ImpactConnect and be a part of a thriving community dedicated to driving social change through collaboration.
-    </p>
-
 
 
     
